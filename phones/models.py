@@ -7,6 +7,7 @@ class Manufacturer(models.Model):
     class Meta:
         verbose_name = 'Manufacturer'
         verbose_name_plural = 'Manufacturers'
+        db_table = 'Manufacturer'
 
     def __str__(self):
         return f'{self.manufacturer}'
@@ -31,6 +32,7 @@ class Phone(models.Model):
     class Meta:
         verbose_name = 'Phone'
         verbose_name_plural = 'Phones'
+        db_table = 'Phone'
 
     def __str__(self):
         return f'{self.model}'
