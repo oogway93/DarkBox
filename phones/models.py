@@ -4,7 +4,7 @@ from django.db import models
 class Manufacturer(models.Model):
     manufacturer = models.CharField('Производитель', max_length=30, unique=True, null=False)
 
-    class Mete:
+    class Meta:
         verbose_name = 'Manufacturer'
         verbose_name_plural = 'Manufacturers'
 
@@ -13,23 +13,22 @@ class Manufacturer(models.Model):
 
 
 class Phone(models.Model):
-    class Memory(models.IntegerChoices):
-        small = 64,
-        medium = 128,
-        big = 256
-
     CHOICES = [
-        (1, 'IOS'),
-        (2, 'Android')
+        [(1, 'IOS'),
+         (2, 'Android')],
+
+        [(1, 64),
+         (2, 128),
+         (3, 256)]
     ]
 
-    manufacturer = models.ForeignKey('Производитель', to=Manufacturer, on_delete=models.CASCADE)
+    manufacturer = models.ForeignKey(Manufacturer, verbose_name='Производитель', on_delete=models.CASCADE)
     model = models.CharField('Модель', max_length=50, null=False)
-    operating_system = models.CharField('Операционная система', choices=CHOICES)
+    operating_system = models.CharField('Операционная система', choices=CHOICES[0])
     release_year = models.DateField('Год релиза')
-    memory = models.IntegerField('Память', choices=Memory.choices)
+    memory = models.IntegerField('Память', choices=CHOICES[1])
 
-    class Mete:
+    class Meta:
         verbose_name = 'Phone'
         verbose_name_plural = 'Phones'
 
