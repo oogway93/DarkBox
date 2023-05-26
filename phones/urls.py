@@ -4,3 +4,4 @@ from .views import AvailableCatalog
 urlpatterns = [
     path('', AvailableCatalog),
 ]
+

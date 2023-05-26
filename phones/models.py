@@ -15,8 +15,8 @@ class Manufacturer(models.Model):
 
 class Phone(models.Model):
     CHOICES = [
-        [("I", "IOS"),
-         ('A', "Android")],
+        [("IOS", "IOS"),
+         ("Android", "Android")],
 
         [(1, 64),
          (2, 128),
@@ -33,6 +33,7 @@ class Phone(models.Model):
         verbose_name = 'Phone'
         verbose_name_plural = 'Phones'
         db_table = 'Phone'
+        ordering = ['id']
 
     def __str__(self):
         return f'{self.model}'
