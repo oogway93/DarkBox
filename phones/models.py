@@ -15,8 +15,8 @@ class Manufacturer(models.Model):
 
 class Phone(models.Model):
     CHOICES = [
-        [(1, 'IOS'),
-         (2, 'Android')],
+        [("I", "IOS"),
+         ('A', "Android")],
 
         [(1, 64),
          (2, 128),

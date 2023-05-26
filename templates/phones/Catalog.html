@@ -1,0 +1,11 @@
+{% extends 'phones/base.html' %}
+
+{% block title %}
+    Catalog
+{% endblock %}
+
+{% block content %}
+    {% for p in phones %}
+        {{ p.model }}
+    {% endfor %}
+{% endblock %}
