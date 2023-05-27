@@ -18,9 +18,9 @@ class Phone(models.Model):
         [("IOS", "IOS"),
          ("Android", "Android")],
 
-        [(1, 64),
-         (2, 128),
-         (3, 256)]
+        [(64, 64),
+         (128, 128),
+         (256, 256)]
     ]
 
     manufacturer = models.ForeignKey(Manufacturer, verbose_name='Производитель', on_delete=models.CASCADE)
