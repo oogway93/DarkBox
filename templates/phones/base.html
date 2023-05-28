@@ -51,11 +51,17 @@
                 </a>
             {% else %}
                 <a href="{% url 'login' %}">
+
                     <button class="btn btn-success">Log In</button>
+
+                </a>
+                &nbsp &nbsp
+                <a href="{% url 'register' %}">
+                    <button class="btn btn-primary">Registration</button>
                 </a>
             {% endif %}
-            &nbsp &nbsp
-            <a href="{% url 'register' %}"><button class="btn btn-primary">Registration</button></a>
+
+
             {#            <a href="{% url 'logout' %}">Logout</a>#}
             {#            <a href="{% url 'login' %}">Login</a>#}
         </div>
