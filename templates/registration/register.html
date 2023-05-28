@@ -1,0 +1,12 @@
+{% extends 'phones/base.html' %}
+
+{% block content %}
+    <h1>Register</h1>
+    <form action="{% url 'register' %}" method="post">
+        <table>{{ form }}</table>
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">submit</button>
+        <p class="message">Already registered? <a href="{% url 'login' %}">Log In</a></p>
+
+    </form>
+{% endblock %}
