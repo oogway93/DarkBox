@@ -1,4 +1,7 @@
+from math import floor
+
 from django.db import models
+from django.db.models.functions import math
 
 
 class Manufacturer(models.Model):
@@ -27,7 +30,10 @@ class Phone(models.Model):
     model = models.CharField('Модель', max_length=50, null=False)
     operating_system = models.CharField('Операционная система', choices=CHOICES[0])
     release_year = models.DateField('Год релиза')
-    memory = models.IntegerField('Память', choices=CHOICES[1])
+    memory: str = models.IntegerField('Память', choices=CHOICES[1])
+    color: str = models.CharField('Цвет', max_length=50, default='Black')
+    price: int = models.IntegerField('Цена', null=True)
+    delivery = models.IntegerField('Доставка', default=0)
 
     class Meta:
         verbose_name = 'Phone'
