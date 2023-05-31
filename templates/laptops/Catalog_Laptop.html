@@ -1,12 +1,12 @@
-{% extends 'phones/base.html' %}
+{% extends 'base.html' %}
 
 {% block title %}
-    Catalog
+    Catalog - Laptop
 {% endblock %}
 
 {% block content %}
     <div id="main">
-        {% for p in phones %}
+        {% for p in laptops %}
             {#        <ul><li><h1>{{ p.manufacturer }} : {{ p.model }}</h1></li></ul>#}
             {#        <span><h1>{{ p.manufacturer }} : {{ p.model }}</h1> </span>#}
             <ol>

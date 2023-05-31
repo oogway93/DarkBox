@@ -1,15 +1,11 @@
 from django.shortcuts import render
 
-from phones.models import Phone, Manufacturer
+from phones.models import Phone
 
 
-def AvailableCatalog(request):
+
+def CatalogPhone(request):
     phones = Phone.objects.all()
     context = {'phones': phones}
-    return render(request, 'phones/Catalog.html', context)
+    return render(request, 'phones/Catalog_Phone.html', context)
 
-
-def Base(request):
-    mm = Phone.objects.get('manufacturer')
-    context = {'mm': mm}
-    return render(request, 'phones/Base.html', context)

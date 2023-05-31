@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Catalog - Phone
+{% endblock %}
+
+{% block content %}
+    <div id="main">
+        {% for p in phones %}
+            {#        <ul><li><h1>{{ p.manufacturer }} : {{ p.model }}</h1></li></ul>#}
+            {#        <span><h1>{{ p.manufacturer }} : {{ p.model }}</h1> </span>#}
+            <ol>
+                <h1>{{ p.id }}. {{ p.manufacturer }} : {{ p.model }}</h1>
+                <ul>
+                    <h3>
+                        <li>{{ p.memory }}</li>
+                    </h3>
+                    <h3>
+                        <li>{{ p.operating_system }}</li>
+                    </h3>
+                    <h3>
+                        <li>{{ p.release_year }}</li>
+                    </h3>
+                </ul>
+            </ol>
+        {% endfor %}
+    </div>
+{% endblock %}

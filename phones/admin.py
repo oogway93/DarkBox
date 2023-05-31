@@ -8,5 +8,4 @@ class PhoneAdmin(admin.ModelAdmin):
     search_fields = ('model',)
 
 
-admin.site.register(Manufacturer)
 admin.site.register(Phone, PhoneAdmin)
