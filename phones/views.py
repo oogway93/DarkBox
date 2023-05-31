@@ -9,6 +9,7 @@ def AvailableCatalog(request):
     return render(request, 'phones/Catalog.html', context)
 
 
-# def SortingCatalog(request):
-#     phones = Manufacturer.objects.all()
-
+def Base(request):
+    mm = Phone.objects.get('manufacturer')
+    context = {'mm': mm}
+    return render(request, 'phones/Base.html', context)

@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'phones.apps.PhonesConfig',
     'users.apps.UsersConfig',
     'api.apps.ApiConfig',
+    'laptops.apps.LaptopsConfig',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +121,12 @@ AUTH_USER_MODEL = 'users.User'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Rest Framework settings
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10
+}
