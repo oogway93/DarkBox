@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +44,9 @@
                 </li>
             </ul>
             {% if user.is_authenticated %}
-                Active user: {{ user }}
+                <a href="{% url 'profile' %}">
+                    <button class="btn">Profile</button>
+                </a>
                 &nbsp
                 <a href="{% url 'logout' %}">
                     <button class="btn btn-danger">Logout</button>
@@ -63,9 +66,14 @@
     </div>
 </nav>
 {% block content %}
-    <a href="{% url 'phone' %}"><button class="btn btn-success">Phone</button></a>
-    &nbsp &nbsp &nbsp
-    <a href="{% url 'laptop' %}"><button class="btn btn-primary">Laptop</button></a>
+    <h2 align="center">List of catalogs</h2>
+    <hr>
+    <br>
+    <a href="{% url 'phone' %}" title="Phone Catalog"><img src="{% static 'media/photo1.png' %}" alt="Phone-Catalog"
+                                                           height="400" width="600"></a>
+    <a href="{% url 'laptop' %}" title="Laptop Catalog"><img src="{% static 'media/photo2.png' %}"
+                                                             alt="Laptop-Catalog"
+                                                             height="400" width="600" align="right"></a>
 {% endblock %}
 </body>
 
