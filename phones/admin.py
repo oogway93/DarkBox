@@ -9,3 +9,4 @@ class PhoneAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Phone, PhoneAdmin)
+admin.site.register(Manufacturer)

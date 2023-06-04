@@ -3,6 +3,6 @@ from .views import CatalogPhone, Base
 
 urlpatterns = [
     path('phones', CatalogPhone, name='phone'),
-    path('', Base)
+    path('', Base, name='home')
 ]
 

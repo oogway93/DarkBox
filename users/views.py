@@ -18,11 +18,8 @@ class Register(View):
         form = UserCreationForm(request.POST)
 
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            login(request, user)
+            user = form.save()
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             return redirect('home')
         context = {
             'form': form
