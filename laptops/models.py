@@ -1,6 +1,6 @@
 from django.db import models
-from phones.models import Phone
-from manufactures.models import Manufacturer
+# from phones.models import Phone
+from phones.models import Manufacturer
 
 
 class Laptop(models.Model):

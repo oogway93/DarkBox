@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import CatalogPhone
+from .views import CatalogPhone, Base
 
 urlpatterns = [
-    path('', CatalogPhone, name='phone')
+    path('phones', CatalogPhone, name='phone'),
+    path('', Base)
 ]
 

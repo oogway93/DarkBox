@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'api.apps.ApiConfig',
     'laptops.apps.LaptopsConfig',
-    'manufactures.apps.ManufacturesConfig',
 ]
 
 MIDDLEWARE = [

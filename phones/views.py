@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
 
-
 from phones.models import Phone
 
 
@@ -13,3 +12,7 @@ def CatalogPhone(request):
 
     context = {'phones': phones, 'page_obj': page_obj}
     return render(request, 'phones/Catalog_Phone.html', context)
+
+
+def Base(request):
+    return render(request, 'base.html')
