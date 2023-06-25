@@ -5,4 +5,3 @@ urlpatterns = [
     path('phones', CatalogPhone, name='phone'),
     path('', Base, name='home')
 ]
-
