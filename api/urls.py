@@ -9,5 +9,6 @@ router.register(r'phones', PhonesModelViewSet)
 router.register(r'laptops', LaptopsModelViewSet)
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls), name='api')
 ]
+urlpatterns += router.urls
