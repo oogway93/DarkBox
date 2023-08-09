@@ -1,9 +1,9 @@
 from django.db import models
-# from phones.models import Phone
 from phones.models import Manufacturer
 
 
 class Laptop(models.Model):
+    """Laptop model"""
     CHOICES = [
         [("IOS", "IOS"),
          ("Windows", "Windows"),
